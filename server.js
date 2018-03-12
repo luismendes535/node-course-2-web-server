@@ -30,9 +30,9 @@ hbs.registerHelper('getCurrentYear',()=>{
     return new Date().getFullYear();
 })
 
-hbs.registerHelper('screamIt', (text)=>{
-    return text.toUpperCase();
-});
+// hbs.registerHelper('screamIt', (text)=>{
+//     return text.toUpperCase();
+// });
 
 app.get('/',(req,res)=>{
     // res.send('<h1>Hello Express!</h1>');
@@ -60,6 +60,10 @@ app.get('/bad', (req,res)=>{
         errorMessage: 'Unable to fulfill this request'
     })
 })
+
+app.get('/projects', (req,res)=>{
+    res.render('projects.hbs');
+});
 
 app.listen(port, ()=>{
     console.log(`Server is up on port ${port}`)
